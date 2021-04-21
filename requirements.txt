@@ -1,0 +1,10 @@
+torch==1.7.1
+torchvision==0.8.2
+tqdm==4.54.0
+retry
+pillow
+numpy==1.18.0
+kornia
+fire
+einops
+adabelief-pytorch
