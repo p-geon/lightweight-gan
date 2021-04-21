@@ -14,4 +14,7 @@ run:
 			--name trial_1 \
 			--batch-size 16 \
 			--gradient-accumulate-every 4 \
-			--num-train-steps 200000
+			--num-train-steps 200000 \
+			--num_workers=4 \
+			--multi_gpus True \
+			--aug-prob 0.25 --aug-types [translation,cutout,color]
