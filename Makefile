@@ -7,7 +7,8 @@ build:
 run:
 	docker run -it --rm --gpus all \
 		-v $(PWD):/work \
-		--memory=10240mb \
+        --cpuset-cpus 0-8 \
+        --memory=48gb \
 		$(NAME_CONTAINER) \
 		lightweight_gan \
 			--data ./data/lsun_data \
@@ -15,6 +16,6 @@ run:
 			--batch-size 16 \
 			--gradient-accumulate-every 4 \
 			--num-train-steps 200000 \
-			--num_workers=4 \
+			--num_workers=1 \
 			--multi_gpus True \
 			--aug-prob 0.25 --aug-types [translation,cutout,color]
